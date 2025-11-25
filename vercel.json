@@ -2,11 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.ts",
+      "src": "api/contact.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
+    {
+      "src": "/api/contact",
+      "dest": "/api/contact"
+    },
     {
       "src": "/api/(.*)",
       "dest": "/api/$1"
