@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "tsc --noEmit",
   "builds": [
     {
       "src": "api/**/*.ts",
