@@ -1,0 +1,21 @@
+# Ignore development files
+node_modules
+.env.local
+.env
+
+# Ignore source TypeScript files (Vercel will build them)
+index.ts
+routes.ts
+vite.ts
+storage.ts
+
+# Ignore build artifacts
+dist
+
+# Ignore git
+.git
+.gitignore
+
+# Ignore config files not needed for serverless
+tsconfig.json
+drizzle.config.ts
