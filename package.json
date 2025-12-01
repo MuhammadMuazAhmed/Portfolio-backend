@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development tsx index.ts",
     "build": "echo 'Vercel will handle the build'",
-    "vercel-build": "echo 'Serverless functions ready for deployment'",
+    "vercel-build": "cp -r public dist || xcopy /E /I public dist",
     "start": "cross-env NODE_ENV=production node dist/server.js",
     "check": "tsc --project ./tsconfig.json"
   },
