@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { contactMessageSchema } from "../shared/schema.js";
+import { contactMessageSchema } from "./schema.js";
 import nodemailer from "nodemailer";
 
 export default async function handler(
