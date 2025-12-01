@@ -75,18 +75,6 @@ export default async function handler(
       },
     });
 
-    // Verify SMTP configuration
-    try {
-      await transporter.verify();
-    } catch (verifyError) {
-      console.error("SMTP verify failed:", verifyError);
-      return res.status(500).json({
-        success: false,
-        message:
-          "Email service is not configured correctly. Please try again later.",
-      });
-    }
-
     // Email content
     const mailOptions = {
       from: process.env.MAIL_FROM || process.env.SMTP_USER,
