@@ -1,34 +1,12 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "api/index.ts",
-      "use": "@vercel/node"
+      "source": "/",
+      "destination": "/api/index"
     },
     {
-      "src": "api/contact.ts",
-      "use": "@vercel/node"
+      "source": "/api",
+      "destination": "/api/index"
     }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/api/index"
-    },
-    {
-      "src": "/api",
-      "dest": "/api/index"
-    },
-    {
-      "src": "/api/contact",
-      "dest": "/api/contact"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
