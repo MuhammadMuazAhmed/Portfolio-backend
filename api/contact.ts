@@ -93,7 +93,16 @@ export default async function handler(
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
+    try {
+      await transporter.sendMail(mailOptions);
+    } catch (emailError) {
+      console.error("Email send failed:", emailError);
+      return res.status(500).json({
+        success: false,
+        message: "Failed to send email. Please try again later.",
+        error: process.env.NODE_ENV === "development" ? String(emailError) : undefined,
+      });
+    }
 
     return res.status(200).json({
       success: true,
